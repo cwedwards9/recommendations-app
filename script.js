@@ -7,11 +7,14 @@ $("#searchBtn").on("click", function(){
       method: "GET",
       url: queryUrl
     })
-    .done(function(data){
-      for(var i = 0; i < 8; i++){
-        var movieTitle = data.Similar.Results[i].Name;
-        console.log(movieTitle);
-        $("#card" + i + " .card-title").text(movieTitle);
-      }
-    });
+    .done(getShows)
 });
+
+// Get movie title results and display them in within each card in our html
+function getShows(data){
+  for(var i = 0; i < 8; i++){
+    var movieTitle = data.Similar.Results[i].Name;
+    console.log(movieTitle);
+    $("#card" + i).text(movieTitle);
+  }
+} 
