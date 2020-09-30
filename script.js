@@ -7,14 +7,38 @@ $("#searchBtn").on("click", function(){
       method: "GET",
       url: queryUrl
     })
-    .done(getShows)
+    .done(getTitles)
 });
 
-// Get movie title results and display them in within each card in our html
-function getShows(data){
+
+// Get the title results and display them in within each card in our html
+function getTitles(data){
   for(var i = 0; i < 8; i++){
     var movieTitle = data.Similar.Results[i].Name;
     console.log(movieTitle);
-    $("#card" + i).text(movieTitle);
+    $("#title" + i).text(movieTitle);
+
+    getPosters(movieTitle, i);
   }
 } 
+
+
+// Get the poster for each title from the omdb API
+function getPosters(title, index){
+  var movieUrl = "http://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
+
+  $.ajax({
+    method: "GET",
+    url: movieUrl
+  })
+  .done(function(data){
+    var posterUrl = data.Poster;
+
+    // Create an img tag, add attributes, and append to each respective card
+    var posterImg = $("<img>");
+    posterImg.attr("src", posterUrl);
+    posterImg.attr("movie-title", title);
+    posterImg.addClass("poster hvr-grow");
+    $("#card" + index).prepend(posterImg);
+  });
+}
