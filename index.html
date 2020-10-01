@@ -5,39 +5,38 @@
         <title>What Next?</title>
         <!-- Bootstrap CSS CDN  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>      
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand text-white">App Name</a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="New Title Search" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        <nav class="navbar navbar-md navbar-light fixed-top">
+            <a class="navbar-brand text-black name">What Now!?</a>
+            <a class="btn btn-primary navbar-btn text-black" href="index.html">Search</a>
         </nav>
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron">
             <div class="container">
-            <h1 class="display-4">What's Next?</h1>
-            <p class="lead">In need of a new tv show, book, or movie to watch? We can give you some recommendations.</p>
+                <h1 class="display-3">What's Next?</h1>
+                <p class="lead">In need of a new tv show, book, or movie to watch? We can give you some recommendations.
+                </p>
             </div>
         </div>
 
         <main class="container">
-            <h1>Give us a title</h1>
+            <h1 class="title">Give us a title</h1>
 
             <section class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search for a: </button>
+                    <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search for: </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Movie</a>
-                        <a class="dropdown-item" href="#">TV Show</a>
-                        <a class="dropdown-item" href="#">Book</a>
+                        <a class="dropdown-item" href="#">Movies</a>
+                        <a class="dropdown-item" href="#">TV Shows</a>
                     </div>
                 </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button" id="showInput">
-                <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0 ml-1" type="submit">Search</button>
+                <input type="text" class="form-control" placeholder="New Title Search" aria-label="Text input with dropdown button" id="showInput">
+                <button class="btn btn-outline-danger my-2 my-sm-0 ml-1 searchBtn" type="submit">Search</button>
             </section>
 
-            <section class="row mb-5">
+            <section class="row result mb-5">
                 <div class="col-sm-6 col-lg-3">
                     <div class="card" id="card0">
                         <div class="card-body">
@@ -69,7 +68,7 @@
             </section>
 
 
-            <section class="row mb-5">
+            <section class="row result mb-5">
                 <div class="col-sm-6 col-lg-3">
                     <div class="card" id="card4">
                         <div class="card-body">
