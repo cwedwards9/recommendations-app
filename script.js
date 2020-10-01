@@ -1,17 +1,38 @@
-// When a user clicks on the search button, the GET request is sent to the api (using a proxy) and pulls movie data 
-// based on user input
-$(".searchBtn").on("click", function(){
-    //Clear any poster images from previous searches
-    $("img").remove();
+// When a user clicks on the search button, the makeRequest function is called with the input passed in it
+$("#searchBtn").on("click", function(){
+    var title = $("#showInput").val();
+    if(title !== ""){
+      makeRequest(title);  
+    } else {
+      return;
+    }
+});
+// When a user presses 'enter' focused on the input, the makeRequest function is called with the input passed in it
+$("#showInput").on("keypress", function(e){
+  if(e.which === 13){
+    var titleInput = $(this).val();
+    if(titleInput !== ""){
+      makeRequest(title);  
+    } else {
+      return;
+    }
+  }
+});
 
-    var title = $(this).prev().val();
-    var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + title + "&limit=8&type=show&k=385951-ChaseEdw-B7D7T5KF";
+
+// A GET request is sent to the api (using a proxy) and pulls movie data based on user input
+function makeRequest(title){
+  //Clear any poster images from previous searches
+  $("img").remove();
+  var titleSearch = title;
+    
+    var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&type=show&k=385951-ChaseEdw-B7D7T5KF";
     $.ajax({
       method: "GET",
       url: queryUrl
     })
     .done(getTitles)
-});
+}
 
 
 // Get the title results and display them in within each card in our html

@@ -31,22 +31,7 @@ body {
     text-shadow: crimson;
 }
 ​
-.container {
-    padding-top: inherit;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 0rem;
-}
-
 .jumbotron {
-    position: relative; 
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     
 }
 
