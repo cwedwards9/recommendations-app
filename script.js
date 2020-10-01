@@ -1,14 +1,10 @@
-// Hide the content until a user makes a search
-$(".row").hide();
-
-
 // When a user clicks on the search button, the GET request is sent to the api (using a proxy) and pulls movie data 
 // based on user input
-$("#searchBtn").on("click", function(){
+$(".searchBtn").on("click", function(){
     //Clear any poster images from previous searches
     $("img").remove();
 
-    var title = $("#showInput").val();
+    var title = $(this).prev().val();
     var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + title + "&limit=8&type=show&k=385951-ChaseEdw-B7D7T5KF";
     $.ajax({
       method: "GET",
@@ -20,7 +16,7 @@ $("#searchBtn").on("click", function(){
 
 // Get the title results and display them in within each card in our html
 function getTitles(data){
-  $(".row").show();
+  $(".row").removeClass("result");
 
   for(var i = 0; i < 8; i++){
     var movieTitle = data.Similar.Results[i].Name;
@@ -49,6 +45,8 @@ function getPosters(title, index){
     posterImg.attr("movie-title", title);
     posterImg.addClass("poster hvr-grow");
     $("#card" + index).prepend(posterImg);
+
+    $("input").val("");
   });
 }
 
@@ -69,8 +67,11 @@ $(".card").on("click", "img", function(){
 
     // Store the movie data to local storage for use in the show.html file
     localStorage.setItem("Title", data.Title);
+    localStorage.setItem("Year", data.Year);
     localStorage.setItem("Poster", data.Poster);
     localStorage.setItem("Plot", data.Plot);
     localStorage.setItem("Rating", data.Ratings[1].Value);
+    localStorage.setItem("Actors", data.Actors);
+    localStorage.setItem("Director", data.Director);
   });
 });
