@@ -8,34 +8,51 @@
     transition-duration: 0.3s;
     transition-property: transform;
     cursor: pointer;
-}
+  }
   
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
+  .hvr-grow:hover,
+  .hvr-grow:focus,
+  .hvr-grow:active {
     transform: scale(1.1);
-}
-
-.result {
+  }
+  
+  .result{
     display: none;
-}
-
-body {
-    background: rgb(48,56,65);
-    background: linear-gradient(90deg, rgba(48,56,65,1) 0%, rgba(214,230,242,1) 18%, rgba(245,245,245,1) 49%, rgba(214,230,242,1) 81%, rgba(48,56,65,1) 100%);
+  }
+  
+  body{
+   background: #FFEFBA; 
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
     
-}
-
-.title{
+  }
+  
+  .title{
     color: rgb(49, 49, 49);
     text-shadow: crimson;
-}
-​
-.jumbotron {
+  }
     
-}
-
-.jumbotron::before {
+  
+  .container {
+    padding-top: inherit;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0rem;
+  }
+  
+  .jumbotron{
+    position: relative; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .jumbotron::before {
   content: "";
   background-image: url("https://www.onceuponachef.com/images/2015/06/Crazy-Good-Spicy-Italian-Popcorn.jpg");
   background-size: cover;
@@ -46,64 +63,114 @@ body {
   bottom: 0px;
   left: 0px;
   opacity: 0.65; 
-}
-
-.jumbotron h1 {
-    position: relative;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    opacity: 1;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    align-items: center;
-    text-align:center;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.jumbotron p {
-    position: relative;
-    opacity: 1;
-    font-weight: 500;
-    color: rgb(0, 0, 0);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    align-items: center;
-    text-align:center;
-}
-
-.card {
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    min-height: 523px;
-    max-height: 523px
-}
-
-.navbar-btn {
-    border-color: #ae142a;
+  }
+  
+  .jumbotron h1{
+  position: relative;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  font-family: 'Lobster', cursive;
+  align-items: center;
+  text-align:center;
+  }
+  
+  .card-title{
+  text-align: center;
+  }
+  
+  .jumbotron p{
+  position: relative;
+  opacity: 1;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  text-align:center;
+  }
+  
+  .card{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  min-height: 523px;
+  }
+  
+  .navbar-btn {
+    border-color: rgba(71, 71, 71, 0.651);
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: black;
-    background-color: transparent;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 800 !important;
+    color: rgb(193, 98, 90) !important;
     padding: 6px 12px !important;
     margin: 0px 0px 0px 10px;
-}
-
-.navbar-btn:hover {
-    background-color: #ae142a !important;
-    border-color: #ae142a !important;
-}
-​
-.name {
+    /* -webkit-text-stroke: 1px  rgb(78, 78, 78); */
+  }
+  .navbar-btn:hover {
+    color: rgb(146, 146, 146)!important;
+    background-color: inherit !important;
+    border-color: #000000 !important;
+  }
+  
+  .btn-primary {
+    border-color: #0011ff93;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: rgb(49, 49, 49);
+  }
+  
+  .name{
   font-family: 'Bangers', cursive;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 400;
   align-items: center;
-  padding-left: 8rem;
-}
+  line-height: 1rem;
+  letter-spacing: 5px;
+  color: rgb(255, 255, 255) !important;
+  /* -webkit-text-stroke: 1.5px black; */
+  }
+  
+  .name:hover{
+    text-decoration: none;
+  }
+  
+  footer { 
+    /* position: bottom; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(193, 98, 90);
+    color: white;
+    text-align: center;
+    opacity:50% ;
+    position: absolute;
+  
+  }
+  
+  .footer-div{
+    flex-direction: column;
+    justify-content: flex-end;
+  
+  } 
+  
+  .fixed-top{
+    position: absolute;
+    ;
+  }
+  
+  #searchBtn {
+    border-color: #C66C65;
+    background-color: transparent;
+    color: #C66C65;
+  }
+  #searchBtn:hover {
+  background-color: #C66C65;
+  color: white;
+  }
+
   
