@@ -10,22 +10,48 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="style.css">
       </head>      
-<body>
-  <nav class="navbar navbar-md navbar-dark bg-dark">
-    <a class="navbar-brand text-white name">What Now!?</a>
-    <a class="btn btn-primary navbar-btn text-white" href="index.html">Search</a>
-  </nav>
+  <body>
+    <nav class="navbar navbar-md navbar-light bg-dark">
+      <a class="navbar-brand text-white name">Title Dive</a>
+      <a class="btn btn-primary navbar-btn text-white" href="index.html">Search</a>
+    </nav>
 
     <main class="container">
-        <h1 id="titleShow"></h1>
-        <img class="poster">
+        <div class="row" style="margin-top:10px">
+    <div class="col-6 d-flex justify-content-end">
+      <img class="poster" style="height: 360px">
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12">
+          <h1 id="titleShow"></h1>
+          <h4 id="yearShow"></h4>
+          <h4 id="ratingShow"></h4>
+          <h5 id="directorShow"></h5>
+          <h6 id="actorsShow"></h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-3" style="margin-top:10px">
+      <div class="row">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+    <div class="col-6" style="margin-top:10px">
+      <div class="row">
+        <div class="col-12">
+          <p id="plotShow"></p>
+        </div>
+      </div>
+    </div>
+  </div>
     </main>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="show.js"></script>
-</body>
+  </body>
 </html>
