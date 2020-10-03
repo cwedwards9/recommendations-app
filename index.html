@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>What Next?</title>
+        <title>Title Dive</title>
         <!-- Bootstrap CSS CDN  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="style.css">
-    </head>      
+    </head>
     <body>
-        <nav class="navbar navbar-md navbar-dark bg-dark">
-            <a class="navbar-brand text-white name">What Now!?</a>
+        <nav class="navbar navbar-md navbar-light bg-dark">
+            <a class="navbar-brand text-white name">Title Dive</a>
             <a class="btn btn-primary navbar-btn text-white" href="index.html">Search</a>
         </nav>
         
@@ -24,22 +24,25 @@
         </div>
 
         <main class="container">
-            <h1 class="title">Give us a title</h1>
+            <h1 class="title text-center mb-4">Search Title Dive</h1>
 
             <section class="input-group mb-3">
-                <select name="titles" id="titleType">
-                    <option value="movies">Movie</option>
-                    <option value="shows">TV Show</option>
-                  </select>
                 <input type="text" class="form-control" placeholder="New Title Search" aria-label="Text input with dropdown button" id="showInput">
                 <button id="searchBtn" class="btn btn-outline-danger my-2 my-sm-0 ml-1" type="submit">Search</button>
             </section>
 
-            <section class="row result">
+            <section id="errorFeedback"  class="result mb-5">
                 <div>
-                    <h5>Results based off of your search for: <span id="titleSearch"></span></h5>
+                    <h5 class="display-5">Sorry, we weren't able to find the title. Please make sure you type in the full correct spelling of your title. Thanks!</h5>
                 </div>
             </section>
+
+            <section class="row result">
+                <div>
+                    <h5 id="resultsFeedback" class="display-5">Results based off of your search for: <span id="titleSearch"></span></h5>
+                </div>
+            </section>
+
             <section class="row result mb-5">
                 <div class="col-sm-6 col-lg-3 d-flex justify-content-center">
                     <div class="card" id="card0" style="width: 14rem;">
