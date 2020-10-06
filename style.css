@@ -172,13 +172,36 @@
 
   #page-container {
     position: relative;
-    min-height: 40vh;
+    min-height: 30vh;
   }
   #content-wrap {
     padding-bottom: 5.0rem;    
   }
-  /* #footer {
-    height: 2.5rem;
-  } */
+
+  footer p a{
+    color: white;
+  }
+  footer p a:hover {
+    color: white;
+    opacity: 90%;
+  }
+
+.display-3{
+  font-weight: 500;
+}
+
+.post{
+  padding-left: 8vw !important;
+}
+
+.details{
+  padding-right: 7vw !important;
+}
+
+#post{
+  border-style: inset;
+  border-color: black;
+  border-width: 1.5px;
+}
 
   
