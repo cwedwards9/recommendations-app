@@ -1,21 +1,7 @@
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: transform;
-  cursor: pointer;
+.fixed-top {
+  position: absolute;
 }
-  
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  transform: scale(1.1);
-}
-   
+
 .navbar-btn {
   border-color: rgba(71, 71, 71, 0.651);
   text-transform: uppercase;
@@ -51,8 +37,8 @@
   color: #C66C65;
 }
 #searchBtn:hover {
-background-color: #C66C65;
-color: white;
+  background-color: #C66C65;
+  color: white;
 }
 
    
@@ -97,6 +83,7 @@ color: white;
   text-align:center;
 }
 
+
 body{
   background: #FFEFBA; 
   background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
@@ -135,6 +122,24 @@ body{
 .card-title{
   text-align: center;
 }
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  cursor: pointer;
+}
+  
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
   
 footer { 
   left: 0;
@@ -147,18 +152,14 @@ footer {
   position: absolute;
 }
   
-.footer-div{
+.footer-div {
   flex-direction: column;
   justify-content: flex-end;
-} 
-  
-.fixed-top{
-  position: absolute;
-}
+}  
   
 #page-container {
   position: relative;
-  min-height: 40vh;
+  min-height: 75vh;
 }
 
 #content-wrap {
