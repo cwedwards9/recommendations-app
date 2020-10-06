@@ -25,30 +25,32 @@ function makeRequest(title){
   //Clear any poster images from previous searches
   $("img").remove();
   var titleInput = title;
-  var titleSearch = titleInput.replaceAll(" ", "+");
-  console.log(titleSearch);
 
   // Insert title in the results header
   $("#titleSearch").text(titleInput);
-    
-    var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&k=385951-ChaseEdw-B7D7T5KF";
-    console.log(queryUrl);
-    $.ajax({
-      method: "GET",
-      url: queryUrl
-    })
-    .done(getTitles)
+
+  var titleSearch = titleInput.replaceAll(" ", "+");
+  
+  var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&k=385951-ChaseEdw-B7D7T5KF";
+
+  $.ajax({
+    method: "GET",
+    url: queryUrl
+  })
+  .done(getTitles)
 }
 
 
 // Get the title results and display them in within each card in our html
 function getTitles(data){
-  console.log(data);
+  
+  // If there are no results to the title searched, hide results elements and show message
   if(data.Similar.Results.length < 1){
     $(".row").addClass("result");
     $("#errorFeedback").removeClass("result");
     return;
   } else {
+    // If there are results, show results elements and insert titles into html
     $(".row").removeClass("result");
     $("#errorFeedback").addClass("result");
 
@@ -58,6 +60,7 @@ function getTitles(data){
       console.log(movieTitle);
       $("#title" + i).text(movieTitle);
 
+      // Call getPosters to get title's poster
       getPosters(movieTitle, i);
     }
   }
@@ -98,13 +101,14 @@ $(".card").on("click", "img", function(){
     url: url
   })
   .done(function(data){
-    // Direct user to the show page with more info on the movie
-    window.location.href = "show.html";
-
     // Call the populate storage function and pass the data from the api into it
     populateStorage(data);
+
+    // Direct user to the show page with more info on the movie
+    window.location.href = "show.html";
   });
 });
+
 
 // Store the movie data to local storage for use in the show.html file
 function populateStorage(data){
@@ -112,7 +116,7 @@ function populateStorage(data){
   localStorage.setItem("Year", data.Year);
   localStorage.setItem("Poster", data.Poster);
   localStorage.setItem("Plot", data.Plot);
-  localStorage.setItem("Rating", data.Ratings[1].Value);
+  localStorage.setItem("Rating", data.Ratings[0].Value);
   localStorage.setItem("Actors", data.Actors);
   localStorage.setItem("Director", data.Director);
 }
