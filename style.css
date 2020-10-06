@@ -131,7 +131,6 @@
   align-items: center;
   line-height: 1rem;
   letter-spacing: 5px;
-  color: rgb(255, 255, 255) !important;
   /* -webkit-text-stroke: 1.5px black; */
   }
   
@@ -140,7 +139,6 @@
   }
   
   footer { 
-    /* position: bottom; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -160,7 +158,6 @@
   
   .fixed-top{
     position: absolute;
-    ;
   }
   
   #searchBtn {
@@ -172,5 +169,16 @@
   background-color: #C66C65;
   color: white;
   }
+
+  #page-container {
+    position: relative;
+    min-height: 40vh;
+  }
+  #content-wrap {
+    padding-bottom: 5.0rem;    
+  }
+  /* #footer {
+    height: 2.5rem;
+  } */
 
   
