@@ -7,15 +7,15 @@
   text-transform: uppercase;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
-  font-weight: 800 !important;
-  color: rgb(193, 98, 90) !important;
-  padding: 6px 12px !important;
-  margin: 0px 0px 0px 10px;
+  font-weight: 800;
+  color: rgb(193, 98, 90);
+  padding: 6px 12px;
+  margin: 0px 10px;
 }
 .navbar-btn:hover {
-  color: rgb(146, 146, 146)!important;
-  background-color: inherit !important;
-  border-color: #000000 !important;
+  background-color:  rgb(193, 98, 90);
+  color: white;
+  border: 1px solid rgb(193, 98, 90);
 }
   
 .name{
@@ -25,10 +25,6 @@
   align-items: center;
   line-height: 1rem;
   letter-spacing: 5px;
-}
-  
-.name:hover{
-  text-decoration: none;
 }
 
 #searchBtn {
@@ -90,21 +86,7 @@ body{
   background: linear-gradient(to right, #FFFFFF, #FFEFBA);
 }
   
-.container {
-  padding-top: inherit;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 0rem;
-}
 
-.title{
-  color: rgb(49, 49, 49);
-  text-shadow: crimson;
-}
-  
 .result{
   display: none;
 }
@@ -174,20 +156,7 @@ footer p a:hover {
   opacity: 90%;
 }
 
-.display-3{
+#titleShow {
+  font-size: 5em;
   font-weight: 500;
-}
-
-.post{
-  padding-left: 8vw !important;
-}
-
-.details{
-  padding-right: 7vw !important;
-}
-
-#post{
-  border-style: inset;
-  border-color: black;
-  border-width: 1.5px;
 }
