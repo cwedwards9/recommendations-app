@@ -1,6 +1,6 @@
 // When a user clicks on the search button, the makeRequest function is called with the input passed in it
 $("#searchBtn").on("click", function(){
-    var titleClick = $("#showInput").val();
+    let titleClick = $("#showInput").val();
     if(titleClick !== ""){
       makeRequest(titleClick);  
     } else {
@@ -10,7 +10,7 @@ $("#searchBtn").on("click", function(){
 // When a user presses 'enter' focused on the input, the makeRequest function is called with the input passed in it
 $("#showInput").on("keypress", function(e){
   if(e.which === 13){
-    var titleEnter = $(this).val();
+    let titleEnter = $(this).val();
     if(titleEnter !== ""){
       makeRequest(titleEnter);  
     } else {
@@ -24,14 +24,14 @@ $("#showInput").on("keypress", function(e){
 function makeRequest(title){
   //Clear any poster images from previous searches
   $("img").remove();
-  var titleInput = title;
+  let titleInput = title;
 
   // Insert title in the results header
   $("#titleSearch").text(titleInput);
 
-  var titleSearch = titleInput.replaceAll(" ", "+");
+  let titleSearch = titleInput.replaceAll(" ", "+");
   
-  var queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&k=385951-ChaseEdw-B7D7T5KF";
+  let queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&k=385951-ChaseEdw-B7D7T5KF";
 
   $.ajax({
     method: "GET",
@@ -55,7 +55,7 @@ function getTitles(data){
     $("#errorFeedback").addClass("result");
 
     for(var i = 0; i < 8; i++){
-      var movieTitle = data.Similar.Results[i].Name;
+      let movieTitle = data.Similar.Results[i].Name;
 
       console.log(movieTitle);
       $("#title" + i).text(movieTitle);
@@ -69,17 +69,17 @@ function getTitles(data){
 
 // Get the poster for each title from the omdb API
 function getPosters(title, index){
-  var movieUrl = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
+  let movieUrl = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
 
   $.ajax({
     method: "GET",
     url: movieUrl
   })
   .done(function(data){
-    var posterUrl = data.Poster;
+    let posterUrl = data.Poster;
 
     // Create an img tag, add attributes, and append to each respective card
-    var posterImg = $("<img>");
+    const posterImg = $("<img>");
     posterImg.attr("src", posterUrl);
     posterImg.attr("movie-title", title);
     posterImg.addClass("poster hvr-grow");
@@ -93,8 +93,8 @@ function getPosters(title, index){
 
 // When a user clicks on a movie poster (img), they will be directed to the show page with more info on that movie
 $(".card").on("click", "img", function(){
-  var title = $(this).attr("movie-title");
-  var url = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
+  let title = $(this).attr("movie-title");
+  let url = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
 
   $.ajax({
     method: "GET",
