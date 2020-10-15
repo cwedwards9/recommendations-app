@@ -1,5 +1,5 @@
-# recommendations-app
-"Title Dive" is the name of this recommendations app. The app allows for users to input a favorite movie or tv show and get back a list of related content to watch.
+# Movie Recommendations App
+"Title Dive" is the name of this app. The app allows for users to input a favorite movie or tv show and get back a list of related content to watch.
 
 [Deployed Application](https://cwedwards9.github.io/recommendations-app/)
 
@@ -15,7 +15,7 @@ For the user that is looking for a new movie or television show to watch. The us
 ![Title Dive Example](titleDive.gif)
 
 ## Contributors
-* Chase Edwards
-* Suzanne Jucaitis
-* Brian Kutsar
-* Justin Lucas
+* [Chase Edwards](https://github.com/cwedwards9)
+* [Suzanne Jucaitis](https://github.com/sjucaitis)
+* [Brian Kutsar](https://github.com/kutsarb)
+* [Justin Lucas](https://github.com/Justluc07)
