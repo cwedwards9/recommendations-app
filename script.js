@@ -33,19 +33,17 @@ function makeRequest(title){
   
   let queryUrl = "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titleSearch + "&limit=8&k=385951-ChaseEdw-B7D7T5KF";
 
-  $.ajax({
-    method: "GET",
-    url: queryUrl
-  })
-  .done(getTitles)
+  axios.get(queryUrl)
+  .then(getTitles);
 }
 
 
 // Get the title results and display them in within each card in our html
 function getTitles(data){
+  console.log(data);
   
   // If there are no results to the title searched, hide results elements and show message
-  if(data.Similar.Results.length < 1){
+  if(data.data.Similar.Results.length < 1){
     $(".row").addClass("result");
     $("#errorFeedback").removeClass("result");
     return;
@@ -55,7 +53,7 @@ function getTitles(data){
     $("#errorFeedback").addClass("result");
 
     for(var i = 0; i < 8; i++){
-      let movieTitle = data.Similar.Results[i].Name;
+      let movieTitle = data.data.Similar.Results[i].Name;
 
       console.log(movieTitle);
       $("#title" + i).text(movieTitle);
@@ -71,12 +69,10 @@ function getTitles(data){
 function getPosters(title, index){
   let movieUrl = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
 
-  $.ajax({
-    method: "GET",
-    url: movieUrl
-  })
-  .done(function(data){
-    let posterUrl = data.Poster;
+    axios.get(movieUrl)
+    .then(function(data){
+      console.log(data);
+      let posterUrl = data.data.Poster;
 
     // Create an img tag, add attributes, and append to each respective card
     const posterImg = $("<img>");
@@ -86,7 +82,7 @@ function getPosters(title, index){
     $("#card" + index).prepend(posterImg);
 
     $("input").val("");
-  });
+    })
 }
 
 
@@ -96,27 +92,24 @@ $(".card").on("click", "img", function(){
   let title = $(this).attr("movie-title");
   let url = "https://www.omdbapi.com/?t=" + title + "&apikey=c539e965";
 
-  $.ajax({
-    method: "GET",
-    url: url
-  })
-  .done(function(data){
+  axios.get(url)
+  .then(function(data){
     // Call the populate storage function and pass the data from the api into it
     populateStorage(data);
 
     // Direct user to the show page with more info on the movie
     window.location.href = "show.html";
-  });
+  })
 });
 
 
 // Store the movie data to local storage for use in the show.html file
 function populateStorage(data){
-  localStorage.setItem("Title", data.Title);
-  localStorage.setItem("Year", data.Year);
-  localStorage.setItem("Poster", data.Poster);
-  localStorage.setItem("Plot", data.Plot);
-  localStorage.setItem("Rating", data.Ratings[0].Value);
-  localStorage.setItem("Actors", data.Actors);
-  localStorage.setItem("Director", data.Director);
+  localStorage.setItem("Title", data.data.Title);
+  localStorage.setItem("Year", data.data.Year);
+  localStorage.setItem("Poster", data.data.Poster);
+  localStorage.setItem("Plot", data.data.Plot);
+  localStorage.setItem("Rating", data.data.Ratings[0].Value);
+  localStorage.setItem("Actors", data.data.Actors);
+  localStorage.setItem("Director", data.data.Director);
 }
